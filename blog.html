@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<!-- Main -->
+<section id="main" class="container">
+	<header>
+		<h2>Blog</h2>
+		<p>Thoughts and explanations.</p>
+	</header>
+	<div class="box">
+
+			<ul class="alt">
+				{% for post in site.posts %}
+					<li>
+						<h4> <a href="{{post.url}}">{{post.title}}</a>  - {{post.date | date: "%d %B %Y"}}</h4>
+					</li>
+				{% endfor %}
+			</ul>
+
+
+	</div>
+</section>

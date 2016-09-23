@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<section id="main" class="container">
+	<header>
+		<h2>Publications</h2>
+	</header>
+
+	<div class="box">
+
+		<ul class="alt">
+			{% assign sorted_pubs = site.publications | sort:"year" |reverse %}
+			{% for pub in sorted_pubs %}
+				<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> PDF</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
