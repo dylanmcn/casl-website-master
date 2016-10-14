@@ -2,6 +2,7 @@
 layout: post
 title: March Machine Learning Madness
 subtitle: By Nick Cortale
+root: {{site.baseurl}}
 ---
 
 Cross-post at Nickc1.github.io
@@ -219,7 +220,7 @@ Now that we have the stats for each team, we can easily populate a matrix that w
 
 In order to fill in our data more completely, we used both both permutations of a game. For example, if Kansas was team 1 and Maryland was team 2, I flipped the data so that Maryland was team 1 and Kansas was team 2. This effectively creates two data points from one data point. As an example, lets look at scatter plot of RPI for the 2003-2011 tournaments.
 
-![RPI Scatter](/assets/march_machine_madness/rpi_scatter.png){: .center-image }
+![RPI Scatter]({{ site.url }}/assets/march_machine_madness/rpi_scatter.png){: .center-image }
 
 As is evident from the image, RPI does a relatively decent job of separating the winning and losing teams. Teams with higher RPI tend to do well against teams with a lower RPI as expected. The boundary, however, between teams with a similar RPI is quite fuzzy. In order to classify the winner and losers, I opted for a logistic regression. Implementing this in python takes only a few lines of code and produces relatively good results. The python code is:
 
@@ -247,7 +248,7 @@ On line `1` we import `train_test_split` which is a convenient one-liner for spl
 The plot below shows the probability contours given by our logistic regression. As expected we see the highest probability of team 1 winning when team 1 plays a team with a low RPI.
 
 
-<img style="display: block;margin: 0 auto;" src="/assets/march_machine_madness/decision_boundary.png" alt="" />
+<img style="display: block;margin: 0 auto;" src="{{site.url}}assets/march_machine_madness/decision_boundary.png" alt="" />
 
 
 Next I wanted to use more than just RPI to predict the outcome of a certain game. I ended up using:
@@ -261,7 +262,7 @@ Next I wanted to use more than just RPI to predict the outcome of a certain game
 
 This yielded pretty decent results as seen in the figure below. I randomly split the feature and target matrix into a testing set and training set 10,000 times (overkill? yes). This gave me a good idea of what I should expect when I predict the 2012-2015 tournaments.
 
-![Score Distribution](/assets/march_machine_madness/score_distribution.png){: .center-image }
+![Score Distribution]({{ site.url }}//assets/march_machine_madness/score_distribution.png){: .center-image }
 
 The kaggle competition, however, scores the algorithms using a log loss.
 
@@ -270,7 +271,7 @@ $$ LogLoss = -\frac{1}{n} \sum_{i=1}^n [y_i log(\hat y_i) + (1-y_i) log(1-\hat y
 where $$n$$ is the number of games played, $$\hat{y}_i$$ is the predicted probability of team 1 beating team 2, and $$y_i$$ is 1 if team 1 wins, 0 if team 2 wins. Using the same logistic regression, the distribution of log loss scores is shown below. The red shows the distribution as it comes out of the model. The blue is adjusted probabilities. In order to score a lower log loss score, the probabilities output by the model were slightly skewed. Probabilities lower than 0.35 were reduced by 0.05 and probabilities over 0.65 were increased by .05. This efficiently makes the algorithm a little more confident and results in a wider distribution of log loss scores, but also the mean log loss score is lower as seen in the figure below.
 
 
-![Log Loss Distribution](/assets/march_machine_madness/log_loss_distribution.png){: .center-image }
+![Log Loss Distribution]({{ site.url }}//assets/march_machine_madness/log_loss_distribution.png){: .center-image }
 
 The only thing left to do for the first part of this competition is to predict the tournaments from 2012-2015. Submitting resulted in a log loss score of 0.561900. This was within one standard deviation of what was expected, so no surprises.
 
@@ -278,14 +279,14 @@ The only thing left to do for the first part of this competition is to predict t
 
 The second part of the competition was to predict the outcome of the 2016 NCAA tournament. I ended up using the same model as above (logistic regression with skewed probabilities). We expected a log loss of around 0.554 as shown above. The model output the probabilities below for the tournament:
 
-<span class="image fit"><img src="/assets/march_machine_madness/my_bracket.png" alt="" /></span>
+<span class="image fit"><img src="{{site.url}}assets/march_machine_madness/my_bracket.png" alt="" /></span>
 
 
 As is evident, there were a couple large upsets in round 1 (MTSU and Syracuse in particular). This hurt many peoples models in the competition.
 
 In order to get an idea of where I stand on the leader board, I created a quick script to scrape the scores and plot them as a histogram. As shown in the figure below.
 
-![kaggle histogram](/assets/march_machine_madness/kaggle_hist.png){: .center-image }
+![kaggle histogram]({{ site.url }}/assets/march_machine_madness/kaggle_hist.png){: .center-image }
 
 As we can see, the log loss scores follow roughly a normal distribution with fat, right tail and a mean around 0.55. My score, 0.573, is represented by the green line. The single, large peak at 0.85 is due to an over-fit model that was shared on the forums. On the training data, the model scored a logloss of 0.23. Many users apparently grabbed the model and fed 2016's data into the algorithm. This obviously resulted in very poor performance.
 

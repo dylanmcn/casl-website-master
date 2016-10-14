@@ -1,2 +1,8 @@
+
+url: "http://people.uncw.edu/cortalen/"
+#baseurl: "file:///Users/nickc/Documents/casl-website/_site/" # the subpath of your site, e.g. /blog
+
+
+
 collections:
   publications:

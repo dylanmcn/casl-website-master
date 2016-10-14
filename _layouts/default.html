@@ -10,7 +10,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="/assets/css/main.css" />
+		<!-- <link rel="stylesheet" href="/assets/css/main.css" /> -->
+		<link rel="stylesheet" href="{{ site.url }}/assets/css/main.css">
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 	</head>
@@ -19,13 +20,13 @@
 
 			<!-- Header -->
 				<header id="header">
-					<h1><a href="index.html">CASL </a> at UNC Wilmington</h1>
+					<h1><a href="{{"index.html" | prepend: site.baseurl}}">CASL </a> at UNC Wilmington</h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="/index.html">Home</a></li>
-							<li><a href="/group.html">Group</a></li>
-							<li><a href="/publications.html">Publications</a></li>
-							<li><a href="/blog.html">Blog</a></li>
+							<li><a href="{{ site.url }}index.html">Home</a></li>
+							<li><a href="{{ site.url }}group.html">Group</a></li>
+							<li><a href="{{ site.url }}publications.html">Publications</a></li>
+							<li><a href="{{ site.url }}blog.html">Blog</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -47,13 +48,12 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="/assets/js/jquery.min.js"></script>
-			<script src="/assets/js/jquery.dropotron.min.js"></script>
-			<script src="/assets/js/jquery.scrollgress.min.js"></script>
-			<script src="/assets/js/skel.min.js"></script>
-			<script src="/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="/assets/js/main.js"></script>
-
+		<link rel="stylesheet" href="{{ "assets/css/main.css" | prepend: site.baseurl }}">
+			<script src="{{ site.url }}/assets/js/jquery.min.js"></script>
+			<script src="{{ site.url }}/assets/js/jquery.dropotron.min.js"></script>
+			<script src="{{ site.url }}/assets/js/jquery.scrollgress.min.js"></script>
+			<script src="{{ site.url }}/assets/js/skel.min.js"></script>
+			<script src="{{ site.url }}/assets/js/util.js"></script>
+			<script src="{{ site.url }}/assets/js/main.js"></script>
 	</body>
 </html>
