@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<!-- Main -->
+<section id="main" class="container">
+	<header>
+		<h2>UNCW Courses</h2>
+		<p>Page links below to various courses taught by Dr. McNamara.</p>
+	</header>
+	<div class="box">
+
+			<ul class="alt">
+
+				{% for course in site.courses %}
+					<li>
+						<h4> <a href="{{site.url}}{{course.url }}">{{course.title}}</a>  - {{course.date | date: "%d %B %Y"}}</h4>
+					</li>
+				{% endfor %}
+			</ul>
+
+
+	</div>
+</section>
