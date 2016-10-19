@@ -14,11 +14,9 @@ layout: default
 
 				{% for course in site.courses %}
 					<li>
-						<h4> <a href="{{site.url}}{{course.link}}">{{course.title}}</a>  - {{course.semester}}</h4>
+						<h4> <a href="{{site.url}}{{course.url}}">{{course.title}}</a>  - {{course.subtitle}}</h4>
 					</li>
 				{% endfor %}
 			</ul>
-
-
 	</div>
 </section>
