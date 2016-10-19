@@ -6,7 +6,7 @@ layout: default
 <section id="main" class="container">
 	<header>
 		<h2>UNCW Courses</h2>
-		<p>Page links below to various courses taught by Dr. McNamara.</p>
+		<p>Courses taught by Dr. McNamara.</p>
 	</header>
 	<div class="box">
 
@@ -14,7 +14,7 @@ layout: default
 
 				{% for course in site.courses %}
 					<li>
-						<h4> <a href="{{site.url}}{{course.url }}">{{course.title}}</a>  - {{course.date | date: "%d %B %Y"}}</h4>
+						<h4> <a href="{{site.url}}{{course.link}}">{{course.title}}</a>  - {{course.semester}}</h4>
 					</li>
 				{% endfor %}
 			</ul>

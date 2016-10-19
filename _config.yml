@@ -1,8 +1,8 @@
 
 url: "http://people.uncw.edu/mcnamarad/"
-#baseurl: "file:///Users/nickc/Documents/casl-website/_site/" # the subpath of your site, e.g. /blog
-
+#url: http://127.0.0.1:4000/
 
 
 collections:
   publications:
+  courses:

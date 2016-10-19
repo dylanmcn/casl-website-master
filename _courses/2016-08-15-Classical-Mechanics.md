@@ -1,8 +1,5 @@
 ---
-layout: course
 title: Classical Mechanics
-subtitle: By Dylan McNamara
-root: {{site.baseurl}}
+semester: Fall 2016
+link: course_pages/classical_mechanics.html
 ---
-
-Coming soon...
