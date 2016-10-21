@@ -10,8 +10,27 @@ layout: default
 
 		<ul class="alt">
 			{% assign sorted_pubs = site.publications | sort:"year" |reverse %}
+
+			<h3> Coral </h3>
 			{% for pub in sorted_pubs %}
-				<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> PDF</a></li>
+				{% if pub.tag == 'coral' %}
+					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> PDF</a></li>
+				{% endif %}
+			{% endfor %}
+
+
+			<h3> Beach </h3>
+			{% for pub in sorted_pubs %}
+				{% if pub.tag == 'beach' %}
+					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> PDF</a></li>
+				{% endif %}
+			{% endfor %}
+
+			<h3> Other </h3>
+			{% for pub in sorted_pubs %}
+				{% if pub.tag == 'other' %}
+					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> PDF</a></li>
+				{% endif %}
 			{% endfor %}
 		</ul>
 	</div>

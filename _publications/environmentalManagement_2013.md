@@ -4,4 +4,5 @@ authors: Harden, C. P., Chin, A., English, M. .R, Fu, R., Galvin, K. A., Gerlak,
 title:  Understanding Human-Landscape Interactions in the Anthropocene.
 journal: Environmental Management
 pdf_link: http://media.wix.com/ugd/28a76d_85ab84f90e8b448981d009dc50547791.pdf
+tag: coral
 ---
