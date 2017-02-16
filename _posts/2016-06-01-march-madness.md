@@ -220,7 +220,7 @@ Now that we have the stats for each team, we can easily populate a matrix that w
 
 In order to fill in our data more completely, we used both both permutations of a game. For example, if Kansas was team 1 and Maryland was team 2, I flipped the data so that Maryland was team 1 and Kansas was team 2. This effectively creates two data points from one data point. As an example, lets look at scatter plot of RPI for the 2003-2011 tournaments.
 
-![RPI Scatter]({{ site.url }}/assets/march_machine_madness/rpi_scatter.png){: .center-image }
+![RPI Scatter]({{ site.url }}assets/march_machine_madness/rpi_scatter.png){: .center-image }
 
 As is evident from the image, RPI does a relatively decent job of separating the winning and losing teams. Teams with higher RPI tend to do well against teams with a lower RPI as expected. The boundary, however, between teams with a similar RPI is quite fuzzy. In order to classify the winner and losers, I opted for a logistic regression. Implementing this in python takes only a few lines of code and produces relatively good results. The python code is:
 
