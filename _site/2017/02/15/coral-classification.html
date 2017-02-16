@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>CASL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!-- <link rel="stylesheet" href="/assets/css/main.css" /> -->
+		<link rel="stylesheet" href="http://127.0.0.1:4000//assets/css/main.css">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">CASL </a> at UNC Wilmington</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="http://127.0.0.1:4000/index.html">Home</a></li>
+							<li><a href="http://127.0.0.1:4000/group.html">Group</a></li>
+							<li><a href="http://127.0.0.1:4000/publications.html">Publications</a></li>
+							<li><a href="http://127.0.0.1:4000/courses.html">Courses</a></li>
+							<li><a href="http://127.0.0.1:4000/blog.html">Blog</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- CONTENT -->
+			<!-- Main -->
+<section id="main" class="container">
+	<header>
+		<h2>Coral Classification</h2>
+		<p>By Nick Cortale</p>
+	</header>
+	<div class="box">
+		<p>Here we explore tensorflow (a python package for neural nets) as a way to classify a benthic photomosiac into two categories: Group 1 (coral, algae, etc…a total of 45 species) or Group 2 (sand, cca, etc…). In the future, this analysis will be expanded to multiple classes (species).</p>
+
+<p>To do this, we chunk up a 10,000 x 10,000 pixel photomosaic from FR13 into 40,000 randomly sampled, 64 x 64 images. An example of the raw mosaic, the hand classified mosaic, and 20 64x64 images are shown below. The top row of the 64 x 64 images are Group 1 (0) and the bottom is Group 2 (1).</p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/fr13.png" alt="fr 13" class="center-image" /></p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/fr13_sub.png" alt="fr 13" class="center-image" /></p>
+
+<p>The model was trained for 9 hours before the error leveled off. At this point the model had achieved 99% accuracy on the training set. To make sure that the model had not simply memorized all the training images, we tested the model on different locations.</p>
+
+<h2 id="palmyra---fr-14">Palmyra - FR 14</h2>
+
+<p>The first test was another region from Palmyra, FR 14. The photomosaic, classified mosaic, and 64 x 64 sub images are shown below.</p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/fr14.png" alt="fr 14" /></p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/fr14_sub.png" alt="fr 14" /></p>
+
+<p>Even with massive differences in the white balances between the two zones, the model was still able to achieve an accuracy of 93.5%. The testing set was 40,000 64 x 64 subsampled images.</p>
+
+<h2 id="kiribati---kir-b1">Kiribati - KIR B1</h2>
+
+<p>Next we checked out kiribati.</p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/kir_b1.png" alt="kir b1" /></p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/kir_b1_sub.png" alt="kir b1" /></p>
+
+<p>The model was not able to generalize to this zone. Most likely because it had never seen sand before and this kind of algae. The model achieved an accuary of only 9.7%. Either we must include Kiribati in the training set or maybe train a different model to classify kiribati. More generally, each island might need its own fine tuned model instead of one model that can classify all regions.</p>
+
+<h2 id="fanning---fan-b6">Fanning - FAN B6</h2>
+
+<p>Next we checked out fanning island.</p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/fan_b6.png" alt="fan b6" /></p>
+
+<p><img src="http://127.0.0.1:4000//assets/coral/fan_b6_sub.png" alt="fan b6" /></p>
+
+<p>The model was able to achieve 90.3% accuracy on this region. This is encouraging as it was a different island and was able to achieve more than 90% accuracy.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>We trained a convolutional neural network on 64 x 64 sub-sampled regions of FR13 and attempted to classify them as either Group 1 (coral, algae, etc.) or Group 2 (dead coral, sand, etc.). We then took our trained model and attempted to classify other zones. The accuracy is shown in the table below. The accuracy for FR 13 is on out of sample images that the model had never seen before.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Zone</th>
+      <th>Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>KIR B1</td>
+      <td>9.7%</td>
+    </tr>
+    <tr>
+      <td>KIR B5</td>
+      <td>39.9%</td>
+    </tr>
+    <tr>
+      <td>FAN B6</td>
+      <td>90.3%</td>
+    </tr>
+    <tr>
+      <td>FR 4</td>
+      <td>96.3%</td>
+    </tr>
+    <tr>
+      <td>FR 13</td>
+      <td>98.5%</td>
+    </tr>
+    <tr>
+      <td>FR 14</td>
+      <td>93.5</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The results here are very encouraging. To improve the accuracy of Kiribati, we will include training images from the zone, or we will train an entirely seperate model. Future experiments will determine which is better.</p>
+
+
+	</div>
+</section>
+
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; CASL. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+		<link rel="stylesheet" href="assets/css/main.css">
+			<script src="http://127.0.0.1:4000//assets/js/jquery.min.js"></script>
+			<script src="http://127.0.0.1:4000//assets/js/jquery.dropotron.min.js"></script>
+			<script src="http://127.0.0.1:4000//assets/js/jquery.scrollgress.min.js"></script>
+			<script src="http://127.0.0.1:4000//assets/js/skel.min.js"></script>
+			<script src="http://127.0.0.1:4000//assets/js/util.js"></script>
+			<script src="http://127.0.0.1:4000//assets/js/main.js"></script>
+	</body>
+</html>
