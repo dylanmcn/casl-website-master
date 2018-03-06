@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>CASL</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!-- <link rel="stylesheet" href="/assets/css/main.css" /> -->
+		<link rel="stylesheet" href="http://people.uncw.edu/mcnamarad/assets/css/main.css">
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index.html">CASL </a> at UNC Wilmington</h1>
+					<nav id="nav">
+						<ul>
+							<li><a href="http://people.uncw.edu/mcnamarad/index.html">Home</a></li>
+							<li><a href="http://people.uncw.edu/mcnamarad/group.html">Group</a></li>
+							<li><a href="http://people.uncw.edu/mcnamarad/publications.html">Publications</a></li>
+							<li><a href="http://people.uncw.edu/mcnamarad/courses.html">Courses</a></li>
+							<li><a href="http://people.uncw.edu/mcnamarad/blog.html">Blog</a></li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- CONTENT -->
+			<!-- Main -->
+<section id="main" class="container">
+	<header>
+		<h2>Data Science FEMA Project</h2>
+		<p>By Dylan McNamara, Nick Rupp, and Greg Terlecky</p>
+	</header>
+	<div class="box">
+		<p>For the fall semester of 2017, two students in the new MS program in Data Science at UNCW, Nick Rupp and Greg Terlecky, are working in the CASL on a project looking into disasters.  I (and they) will periodically post updates here on their progress.</p>
+
+<h3 id="october-update">October update</h3>
+<p>In the wake of the recent disasters Hurricanes Harvey, Irma and Maria, we are endeavoring to gain insight into the spatial and temporal dynamics of disaster events.  As a first step, we have developed a novel visualization of payments made by the Federal Emergency Management Agency (<a href="https://www.fema.gov">FEMA</a>) to aid victims recovering from damage suffered during hurricanes.  The geographic map shown below depicts these payouts over 12 years along the U.S. East and Gulf Coasts, where the colors indicate the magnitude of all payouts given to a county for a particular storm event.  The data for these images was aggregated from publicly available FEMA databases.</p>
+
+<p><img src="http://people.uncw.edu/mcnamarad/assets/FEMA/movieTOT.gif" alt="hurricanes" class="center-image" /></p>
+
+<h3 id="december-update">December update</h3>
+<p>Over the recent two months, we have combined two sources of data to provide insight into disaster dynamics.  The previous data from (<a href="https://www.fema.gov">FEMA</a>) was combined with a data set for all of the beach nourishment episodes that have occurred along the U.S. East Coast (this data can be found at the Program for the Study of Developed Shorelines <a href="http://beachnourishment.wcu.edu">PSDS</a>).  The scientific aim that drove our reasoning for combining these sources of data was to determine if beach nourishment acted as a protective mechanism against storms by reducing damage payouts.</p>
+
+<p>To answer this question, for every storm incident along an East Coast beach recorded in the FEMA payout database, we wanted to find the amount of sand that was left over from the most recent beach nourishment episode at that beach and thereafter use that as an hypothesized proxy for the level of protection from storms.  We assumed that the volume of sand placed in a beach nourishment episode decreased exponentially in time (a reasonable assumption given how the beach shoreface responds to being steepened in cross-section).  The image below shows a scatterplot of total damage suffered against volume of sand remaining from the most recent nourishment.  Each blue circle thus represents every storm event at every beach town in the U.S. East coast over the past 3 decades.  A simple minded assumption would be that the more sand that is left from the nourishment, the less damage one would see.  One look at that image - and IT AIN’T THAT SIMPLE!  There does seem to be a protective effect in nourishment, namely soon after very large nourishment events you don’t find very large damage events.</p>
+
+<p><img src="http://people.uncw.edu/mcnamarad/assets/FEMA/Nourishment_results_v2.png" alt="nourishment" class="center-image" /></p>
+
+<p>The are almost as many caveats as data points at this stage (not really but there’s enough of them to keep exploring).  Our next steps are to normalize the nourishment by town length (so we can see the nourishment cross section), to normalize the damage by town size, and hopefully to tease out storm size (ideally based on storm surge size rather than category strength).  Stay tuned.</p>
+
+
+	</div>
+</section>
+
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; CASL. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+
+			<script src="http://people.uncw.edu/mcnamarad/assets/js/jquery.min.js"></script>
+			<script src="http://people.uncw.edu/mcnamarad/assets/js/jquery.dropotron.min.js"></script>
+			<script src="http://people.uncw.edu/mcnamarad/assets/js/jquery.scrollgress.min.js"></script>
+			<script src="http://people.uncw.edu/mcnamarad/assets/js/skel.min.js"></script>
+			<script src="http://people.uncw.edu/mcnamarad/assets/js/util.js"></script>
+			<script src="http://people.uncw.edu/mcnamarad/assets/js/main.js"></script>
+	</body>
+</html>
