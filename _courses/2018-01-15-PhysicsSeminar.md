@@ -51,3 +51,7 @@ Some Files:
 [Week4B]: {{ site.url }}assets/introduction-to-latex-part-2_Students.pdf
 
 [Week4C]: {{ site.url }}assets/introduction-to-latex-part-3.pdf
+
+[Nature Link][Nature] 
+
+[Nature]: https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/contents
