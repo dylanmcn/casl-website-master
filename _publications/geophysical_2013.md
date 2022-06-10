@@ -4,5 +4,5 @@ authors: Moore, L, <strong>McNamara, D. E.</strong>, Murray, A. B., and Brenner,
 title: Observed changes in hurricane-driven waves explain the dynamics of modern cuspate shorelines
 journal: Geophysical Research Letters
 pdf_link: http://onlinelibrary.wiley.com/doi/10.1002/2013GL057311/full
-tag: morph
+tag: recent
 ---

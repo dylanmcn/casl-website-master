@@ -11,40 +11,13 @@ layout: default
 		<ul class="alt">
 			{% assign sorted_pubs = site.publications | sort:"year" |reverse %}
 
-			<h3> Coupled Human-Coastlines </h3>
+			<h4> Last updated March 2021 </h4>
 			{% for pub in sorted_pubs %}
-				{% if pub.tag == 'coupledcoas' %}
+				{% if pub.tag == 'recent' %}
 					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> LINK</a></li>
 				{% endif %}
 			{% endfor %}
 
-			<h3> Coral Reefs </h3>
-			{% for pub in sorted_pubs %}
-				{% if pub.tag == 'coral' %}
-					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> LINK</a></li>
-				{% endif %}
-			{% endfor %}
-
-			<h3> Morphodynamics </h3>
-			{% for pub in sorted_pubs %}
-				{% if pub.tag == 'morph' %}
-					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> LINK</a></li>
-				{% endif %}
-			{% endfor %}
-
-			<h3> General Coupled Human-Environmental Systems </h3>
-			{% for pub in sorted_pubs %}
-				{% if pub.tag == 'coupledgen' %}
-					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> LINK</a></li>
-				{% endif %}
-			{% endfor %}
-
-			<h3> Physics - Optics and Nonlinear Dynamics </h3>
-			{% for pub in sorted_pubs %}
-				{% if pub.tag == 'physics' %}
-					<li> <strong>{{pub.year}}</strong> {{pub.authors}}, {{pub.title}}. <em>{{pub.journal}}</em> : <a href="{{pub.pdf_link}}"> LINK</a></li>
-				{% endif %}
-			{% endfor %}
 		</ul>
 	</div>
 </section>

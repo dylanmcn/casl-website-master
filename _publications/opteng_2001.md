@@ -4,5 +4,5 @@ authors: Davis, J. A., <strong>McNamara, D. E.</strong>, Cottrell, D. M., Campos
 title: Encoding complex diffractive optical elements onto a phase-only liquid-crystal spatial light modulator.
 journal: Optical Engineering
 pdf_link: http://opticalengineering.spiedigitallibrary.org/article.aspx?articleid=1098003
-tag: physics
+tag: recent
 ---
