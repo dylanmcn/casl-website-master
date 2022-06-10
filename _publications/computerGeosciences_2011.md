@@ -4,5 +4,5 @@ authors: Murray, A. B., Gopalakrishnan, S, <strong>McNamara, D. E.</strong>, and
 title:  Progress Coupling Models of Human and Coastal Landscape Change
 journal: Computers and Geoscience
 pdf_link: http://www.sciencedirect.com/science/article/pii/S0098300411003414
-tag: coupledcoas
+tag: recent
 ---

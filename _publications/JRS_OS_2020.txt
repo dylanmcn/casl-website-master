@@ -1,0 +1,8 @@
+---
+year: 2020
+authors: Sandin, S., Eynaud, Y., Williams, G.J., Edwards, C.B., and <strong>McNamara, D. E.</strong>
+title: Modeling the linkage between coral assemblage structure and pattern of environmental forcing.
+journal: Journal of the Royal Society Open Science
+pdf_link: https://royalsocietypublishing.org/doi/pdf/10.1098/rsos.200565
+tag: recent
+---
